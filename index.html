@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+    <head>
+        <title>reStructuredText Cheatsheet</title>
+        <meta charset="utf-8">
+        <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Anonymous+Pro:400,700" rel="stylesheet" type="text/css">
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <div>
+            <div>
+                <header>
+                    <img src="rst.png">
+                    <h1>reStructuredText</h1>
+                    <div><div>Cheatsheet</div></div>
+                </header>
+                <section>
+                    <h2>Inline Markup</h2>
+
+                    <em>Emphasis:</em> <code>*Text*</code><br>
+                    <strong>Strong Emphasis:</strong> <code>**Text**</code><br>
+                    Inline <code>Code</code> Block: <code>``Text``</code><br>
+                    Interpreted Text: <code>`Text`</code><br>
+                    <a href="">Reference:</a> <code>Name_</code><br>
+                    <a href="">Phrase Ref.:</a> <code>`Name`_</code><br>
+                    Internal Target: <code>_`Name`</code><br>
+                    Substitution Ref.: <code>|reference|</code><br>
+                    Footnote<sup><a href="">1</a></sup> Ref.: <code>Text [1]_</code><br>
+                    Citation<sup><a href="">(C12)</a></sup> Ref.: <code>Text [C12]_</code><br>
+                </section>
+                <section>
+                    <h2>Explicit Markup</h2>
+
+                    <h3>Footnotes</h3>
+
+                    <pre><code>.. [1] Footnote
+.. [#] Auto-numbered fn.
+.. [#a] Named a.n. fn.
+.. [*] Symbol fn.</code></pre>
+
+                    <h3>Citations</h3>
+
+                    <pre><code>.. [Name] Citation</code></pre>
+
+                    <h3>Links</h2>
+
+                    <a href="">http://google.com/</a>:
+                    <pre><code>http://google.com/</code></pre>
+
+                    <a href="">Simple Link</a>:
+                    <pre><code>`Simple Link<br>&lt;http://google.com/&gt;`_</code></pre>
+
+                    <a href="">Reference Link</a>:
+                    <pre><code>`Reference Link`_<br>.. _`Reference Link`:<br>   http://google.com/</code></pre>
+
+                    <a href="">Anonymous Link</a>:
+                    <pre><code>`Link Text`__<br>.. __ http://google.com/</code></pre>
+                </section>
+                <section>
+                    <h2>Escaping</h2>
+
+                    <pre><code>Not \*bold\*</code></pre>
+                </section>
+            </div><div>
+                <section>
+                    <h2>Comments</h2>
+
+                    <pre><code>.. This is a simple
+   comment with
+   multiple lines.</code></pre>
+                </section>
+                <section>
+                    <h2>Titles</h2>
+
+                    <pre><code>Example<br>============</code></pre>
+                    The title order is set automatically. Titles can be underlined with eg. one of the following characters:<br>
+                    <code>= - ` : ' " ~ ^ _ * + #</code>
+                </section>
+                <section>
+                    <h2>Lists</h2>
+
+                    <h3>Bullet List</h3>
+                    <pre><code>- Item 1
+- You can use those
+  characters as
+  bullets: - * +</code></pre>
+
+                    <h3>Numbered List</h3>
+                    <pre><code>1. First item
+5. Second item
+#. Auto-numbered item</code></pre>
+
+                    <h3>Definition List</h3>
+                    <pre><code>Term:
+  Definition.
+Term 2:
+  Definition 2.</code></pre>
+                    <dl style="margin: 0;">
+                        <dt>Term:</dd>
+                        <dd>Definition.</dd>
+                        <dt>Term 2:</dd>
+                        <dd>Definition 2.</dd>
+                    </dl>
+
+                    <h3>Field List</h3>
+                    <pre><code>:Field: Value
+:Field 2:
+  Example Value</code></pre>
+                </section>
+                <section>
+                    <h3>Option List</h3>
+                    <pre><code>-x         Example
+--ab=test  Another one
+/D         DOS style</code></pre>
+
+                    <table>
+                        <tr><td><code>-x</code></td><td>Example</td></tr>
+                        <tr><td><code>--ab=<em>test</em></code></td><td>Another one</td></tr>
+                        <tr><td><code>/D</code></td><td>DOS style</td></tr>
+                    </table>
+                </section>
+            </div><div>
+                <section>
+                    <h2>Images</h2>
+
+                    <h3>Normal image</h3>
+                    <pre><code>.. image:: image.png</code></pre>
+
+                    <h3>Named Image</h3>
+                    <pre><code>The image: |test|
+
+.. |test| image:: a.png</code></pre>
+                </section>
+                <section>
+                    <h2>Code Blocks</h2>
+
+                    <pre><code>Paragraph before<span class="important">::</span>
+
+  The code.
+  Multiline.
+
+  With empty lines.
+
+Paragraph after...</code></pre>
+                </section>
+                <section>
+                    <h2>Quote Blocks</h2>
+
+                    <pre><code>  Just indent the text</code></pre>
+                </section>
+                <section>
+                    <h2>Line Blocks</h2>
+
+                    <pre><code>| Keep indents and
+|   line breaks.</code></pre>
+                </section>
+                <section>
+                    <h2>Tables</h2>
+
+                    <pre><code>+-------+---------+
+| Table | Header  |
++=======+=========+
+| Item  | Example |
++-------+---------+
+| Double Item     |
++-------+---------+</code></pre>
+                    <pre><code>=====  =======
+Quick Table
+--------------
+Col 1  Col 2
+=====  =======
+Test   ABC
+Item   Example
+=====  =======</code></pre>
+                </section>
+                <section>
+                    <h2>Horizontal line</h2>
+
+                    <pre><code>----</code></pre>
+                </section>
+                <footer>
+                    More information: <a href="http://goo.gl/zeGsIj">http://goo.gl/zeGsIj</a><br>
+                    This cheatsheet is licensed under <strong>MIT License</strong>.<br>
+                    Based on the <strong>cheet</strong> template by <strong>moqmar</strong>.<br>
+                    <strong><a href="http://github.com/moqmar/cheet-rst">http://github.com/moqmar/cheet-rst</a></strong>
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
